@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.louisgeek.louisokhttputilsdemo"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+
+    //LZY
+    compile 'com.lzy.net:okhttputils:1.4.1'  //可以单独使用，不需要依赖下方的扩展包
+    compile 'com.lzy.net:okhttpserver:0.1.4' //扩展了下载管理和上传管理，根据需要添加
+
+    compile 'cn.finalteam:okhttpfinal:2.0.7'
+
+    //ZHY
+   /* compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okio:okio:1.8.0'
+    compile 'com.zhy:okhttputils:2.4.1'*/
+}
